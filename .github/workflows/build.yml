@@ -7,6 +7,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container: ghcr.io/pspdev/pspdev:latest
+    defaults:
+      run:
+        working-directory: kartracer
     steps:
       - uses: actions/checkout@v4
       - name: Build
@@ -18,4 +21,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: KartRacer
-          path: dist
+          path: kartracer/dist
